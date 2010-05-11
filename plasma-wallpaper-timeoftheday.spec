@@ -1,8 +1,9 @@
 Name: plasma-wallpaper-timeoftheday
 Summary: A Plasma Wallpaper that changes wallpaper based on day hour
 Version: 0.1
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: plasma-wallpaper-timeoftheday-%{version}.tar.bz2
+Patch0:  plasma-wallpaper-timeoftheday-0.1-add-translation.patch
 Group: Graphical desktop/KDE
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License: GPL
@@ -17,6 +18,7 @@ A Plasma Wallpaper that changes wallpaper based on day hour
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %cmake_kde4
