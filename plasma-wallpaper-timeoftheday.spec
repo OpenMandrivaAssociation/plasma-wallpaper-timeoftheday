@@ -1,7 +1,7 @@
 Name: plasma-wallpaper-timeoftheday
 Summary: A Plasma Wallpaper that changes wallpaper based on day hour
 Version: 0.1
-Release: %mkrel 4
+Release: %mkrel 5
 Source0: plasma-wallpaper-timeoftheday-%{version}.tar.bz2
 Patch0:  plasma-wallpaper-timeoftheday-0.1-add-translation.patch
 Patch1:  plasma-wallpaper-timeoftheday-0.1-remove-debug.patch
