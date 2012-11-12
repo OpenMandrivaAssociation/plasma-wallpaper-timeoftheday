@@ -1,0 +1,25 @@
+diff -p -up timeofthedaywallpaper.cpp.orig timeofthedaywallpaper.cpp
+--- timeofthedaywallpaper.cpp.orig  2010-04-30 16:06:54.000000000 -0300
++++ timeofthedaywallpaper.cpp   2010-05-07 17:31:56.000000000 -0300
+@@ -236,7 +236,8 @@ void TimeOfTheDayWallpaper::paint(QPaint
+     painter->setCompositionMode(QPainter::CompositionMode_Source);
+     painter->drawPixmap(exposedRect, m_pixmap, exposedRect.translated(-boundingRect().topLeft()));
+ 
+-    if (!m_oldFadedPixmap.isNull()) {
++    //if (!m_oldFadedPixmap.isNull()) {
++    if (!m_oldFadedPixmap.isNull() && !m_timer.isActive()) {
+         painter->setCompositionMode(QPainter::CompositionMode_SourceAtop);
+         painter->drawPixmap(exposedRect, m_oldFadedPixmap, exposedRect.translated(-boundingRect().topLeft()));
+     }
+@@ -285,8 +286,8 @@ void TimeOfTheDayWallpaper::updateBackgr
+     m_oldPixmap = m_pixmap;
+     m_oldFadedPixmap = m_oldPixmap;
+     m_pixmap = QPixmap::fromImage(img);
+-    int code = qrand();
+-    img.save(QString("/tmp/img-%1.png").arg(code));
++    //int code = qrand();
++    //img.save(QString("/tmp/img-%1.png").arg(code));
+ 
+     if (!m_oldPixmap.isNull()) {
+         Plasma::Animator::self()->customAnimation(m_transitionFrames,
+

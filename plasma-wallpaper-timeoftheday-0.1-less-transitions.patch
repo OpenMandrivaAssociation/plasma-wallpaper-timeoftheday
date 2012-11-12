@@ -1,0 +1,17 @@
+Index: timeofthedaywallpaper.cpp
+===================================================================
+--- timeofthedaywallpaper.cpp
++++ timeofthedaywallpaper.cpp	2010-05-19 23:27:29.000000000 +0200
+@@ -171,7 +171,11 @@
+ 
+         int duration = currentEvent.duration - keyEvent.secsTo(m_currentTime);
+ 
+-        m_transitionFrames = duration / 2;
++        m_transitionFrames = duration / 30;
++        if ( m_transitionFrames < 1 ) {
++          m_transitionFrames = 1 ;
++        }
++
+         m_transitionDuration = duration * 1000;
+         m_transitionWallpaper = toWallpaper;
+ 

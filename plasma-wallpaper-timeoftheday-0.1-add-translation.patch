@@ -1,0 +1,12 @@
+Index: timeofthedaywallpaper.cpp
+===================================================================
+--- timeofthedaywallpaper.cpp
++++ timeofthedaywallpaper.cpp	2010-05-11 09:59:10.000000000 +0200
+@@ -50,6 +50,7 @@
+     m_transitionDuration(100),
+     m_configWidget(0)
+ {
++    KGlobal::locale()->insertCatalog("plasma_wallpaper_image");
+     connect(&m_timer, SIGNAL(timeout()), this, SLOT(nextWallpaper()));
+     connect(this, SIGNAL(renderCompleted(QImage)), this, SLOT(updateBackground(QImage)));
+     m_configUi = new Ui::TimeOfTheDayConfig();
