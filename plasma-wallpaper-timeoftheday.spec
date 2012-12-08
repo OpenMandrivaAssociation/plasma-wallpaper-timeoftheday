@@ -1,7 +1,7 @@
 Name: plasma-wallpaper-timeoftheday
 Summary: A Plasma Wallpaper that changes wallpaper based on day hour
 Version: 0.1
-Release: %mkrel 7
+Release: %mkrel 8
 Source0: plasma-wallpaper-timeoftheday-%{version}.tar.bz2
 Patch0:  plasma-wallpaper-timeoftheday-0.1-add-translation.patch
 Patch1:  plasma-wallpaper-timeoftheday-0.1-remove-debug.patch
@@ -29,14 +29,49 @@ A Plasma Wallpaper that changes wallpaper based on day hour
 %make
 
 %install
-rm -rf %{buildroot}
+rm -rf $RPM_BUILD_ROOT
 %makeinstall_std -C build
 
 
 %clean
-rm -rf %{buildroot}
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
 %_kde_libdir/kde4/plasma_wallpaper_timeoftheday.so
 %_kde_services/plasma-wallpaper-timeoftheday.desktop
+
+
+%changelog
+* Tue Feb 21 2012 abf
+- The release updated by ABF
+
+* Thu May 05 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1-7mdv2011.0
++ Revision: 667782
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1-6mdv2011.0
++ Revision: 607178
+- rebuild
+
+* Wed May 19 2010 Nicolas Lécureuil <nlecureuil@mandriva.com> 0.1-5mdv2010.1
++ Revision: 545453
+- Do less transitions, to use less CPU
+  CCBUG: 59308
+
+* Tue May 11 2010 Nicolas Lécureuil <nlecureuil@mandriva.com> 0.1-4mdv2010.1
++ Revision: 544498
+- Remove img created for debug
+
+* Tue May 11 2010 Nicolas Lécureuil <nlecureuil@mandriva.com> 0.1-3mdv2010.1
++ Revision: 544463
+- Activate translations
+
+* Mon Nov 09 2009 Nicolas Lécureuil <nlecureuil@mandriva.com> 0.1-2mdv2010.1
++ Revision: 463838
+- Rebuild against new KDE ( fixes upstream bug #213654)
+
+* Thu Oct 29 2009 Arthur Renato Mello <arthur@mandriva.com> 0.1-1mdv2010.0
++ Revision: 460099
+- import plasma-wallpaper-timeoftheday
+
